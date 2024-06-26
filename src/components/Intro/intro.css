@@ -38,7 +38,8 @@
 
 .introPara {
     font-size: medium;
-    font-weight: 100;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 .btn {
@@ -53,4 +54,12 @@
 .btnImg {
     object-fit: cover;
     margin: 0 0.25rem;
+    height: 1rem;
+}
+
+@media screen and (max-width:480px) {
+    .bg{
+        right: -20vw;
+    }
+ 
 }
