@@ -3,7 +3,7 @@
     height: 5rem;
     width: 100vw;
     max-width: 75rem;
-    margin: 0 auto;
+    margin: 0 7.5rem;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
@@ -11,12 +11,15 @@
     position: fixed;
     top: 0;
     z-index: 3;
+    font-weight: 400;
+    font-size: 1.25rem;
+    
 }
 
 .logo {
     object-fit: cover;
-    height: 3rem;
-    width: 4rem;
+    height: 5rem;
+    width: 6rem;
 }
 
 .desktopMenuListItem { 
@@ -46,4 +49,8 @@
     height: 1rem;
     width: 1rem;
     margin: 1rem;
+}
+
+.active{
+    color: yellow;
 }
