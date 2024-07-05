@@ -29,6 +29,7 @@
     flex-wrap: wrap;
     width: 100vw;
     max-width: 65rem; 
+
 }
 
 .worksImg{
@@ -36,6 +37,7 @@
     height: 15rem;
     width: 10rem;
     margin: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .worksBtn{

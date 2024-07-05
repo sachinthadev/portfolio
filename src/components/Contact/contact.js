@@ -6,6 +6,7 @@ import linkedin from '../../assets/771382_channel_circle_logo_media_social_icon.
 import twitter from '../../assets/107178_circle_linkedin_icon.png';
 import youtube from '../../assets/6636566_instagram_social media_social network_icon.png';
 import insta from '../../assets/4555889_code_github_hosting_learning_programmer_icon.png';
+import upwork from '../../assets/upwork.jpg';
 
 
 const Contact = () => {
@@ -20,6 +21,7 @@ const Contact = () => {
                 </p>
                 <div className='clientsImgs'>
                 <img src={clientImg1} alt='' className='clientsImg'/>
+                <img src={upwork} alt='' className='clientsImg'/>
                 </div>
             </div>
             <div id='contact'>
