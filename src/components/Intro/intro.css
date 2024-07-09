@@ -1,5 +1,5 @@
 #intro {
-    height: calc(100vh - 4rem);
+    height: calc(115vh - 4rem);
     width: 100vw;
     max-width: 75rem;
     margin: 0 auto ;
@@ -60,6 +60,28 @@
 @media screen and (max-width:480px) {
     .bg{
         right: -20vw;
+        display: none;
+        
+    }
+
+    .introContent{
+        height: 130vh;
+        width: 100vw;
+        padding: 2rem;
+       
+        
+    }
+
+    .btn {
+
+
     }
  
 }
+
+
+@media screen and (max-width:480px) {
+   
+ 
+}
+

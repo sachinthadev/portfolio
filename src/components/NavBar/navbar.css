@@ -1,20 +1,20 @@
 .navbar {
     background: rgb(30, 30, 30);
     height: 5rem;
-    width: 100vw;
+    width: 100%;
     max-width: 100vw;
     margin: 0 auto;
-    padding: 1rem 6rem;
+    padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: fixed; /* Fixed position to stay at the top */
     top: 0;
     z-index: 3;
     font-weight: 400;
     font-size: 1.25rem;
-    
 }
+
 
 .logo {
     object-fit: cover;
@@ -57,4 +57,67 @@
     border-bottom: 3px solid yellow;
 }
 
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .navbar-menu {
+        display: none; /* Hide menu items for mobile view */
+    }
+
+    .navbar-toggle {
+        display: block; /* Show toggle button for mobile view */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+
+
+
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.navbar-toggle.open + .navbar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-menu a {
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+}
 

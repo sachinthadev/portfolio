@@ -8,7 +8,7 @@ const Skills = () => {
   return (
    <section id='skills'>
         <span className='skillTitle'>What I do</span>
-        <span className='skillDesc'>I am a self-employed full-stack software engineer, I design and build complete web applications, handling both front-end and back-end tasks. I create user interfaces with HTML, CSS, and JavaScript, and develop server-side logic using languages like Node.js and PHP. I manage databases, ensure the application is secure and performs well, and work with clients to meet their needs and deliver quality software.</span>
+        <span className='skillDesc'>I am a self-employed full-stack software engineer specializing in complete web applications. I handle front-end (HTML, CSS, JavaScript) and back-end (Node.js, PHP) development, manage databases, ensure security and performance, and collaborate with clients to deliver high-quality software.</span>
         <div className='skillBars'>
             <div className='skillBar'>
                 <img src={Front} alt='Front-end'className="skillBarImg"/>
