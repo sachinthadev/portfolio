@@ -75,15 +75,16 @@
     padding: 0.75rem 3.5rem;
 }
 
-
 .links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 1rem;
 }
 
 .link {
     object-fit: cover;
-    height: 3rem;
-    width: 3rem;
-    margin: 0 0.75rem;
+    height: 3rem; /* Adjust height as needed */
+    width: 3rem; /* Adjust width as needed */
+    margin: 0.5rem; /* Adjust margin as needed */
 }
