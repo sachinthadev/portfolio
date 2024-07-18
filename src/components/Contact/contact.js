@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react';
 import './contact.css';
 import clientImg1 from '../../assets/auso.jpeg';
 import facebook from  '../../assets/107175_circle_facebook_icon.png';
@@ -9,7 +9,26 @@ import insta from '../../assets/4555889_code_github_hosting_learning_programmer_
 import upwork from '../../assets/upwork.jpg';
 
 
+import emailjs from '@emailjs/browser';
+
+
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_k5c1dld', 'template_tk1naa5', form.current, {publicKey: '6QIdIAuKBxjmjMwbazQR_',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
  
   return (
     <section id='contactPage'>
@@ -27,17 +46,17 @@ const Contact = () => {
             <div id='contact'>
                 <h1 className='clientsTitle'>Contact Me</h1>
                 <span className='contactDesc'>If you would like to discuss a project or have any questions, please feel free to contact me. I am open to new opportunities and collaborations.</span>
-                <form className='contactForm' >
+                <form className='contactForm' ref={form}  onSubmit={sendEmail}>
                     <input type='text' className='name' placeholder='Your Name' name="user_name"/>
                     <input type='email' className='email' placeholder='Your Email' name="user_email"/>
-                    <textarea className='msg' name='message' rows="5" placeholder='Your Message'></textarea>
-                    <button type='submit' value="send" className='submitBtn'>Submit</button>
+                    <textarea className='msg' name="message" rows="5" placeholder='Your Message'></textarea>
+                    <button type='Submit' value="Send" className='submitBtn'>Submit</button>
                     <div className='links'>
-                        <img src={facebook}alt='facebook' className='link'/>
-                        <img src={linkedin} alt='linkedin' className='link'/>
-                        <img src={twitter} alt='twitter' className='link'/>
-                        <img src={youtube} alt='youtube' className='link'/>
-                        <img src={insta} alt='instagram' className='link'/>
+                       <a href='https://web.facebook.com/'><img src={facebook}alt='facebook' className='link'/></a> 
+                       <a href='www.linkedin.com/in/sahan-sachintha-56a49b284'> <img src={linkedin} alt='linkedin' className='link'/></a>
+                       <a href='https://www.youtube.com/@user-px7gw7nv4n'> <img src={twitter} alt='twitter' className='link'/></a>
+                       <a href='https://www.youtube.com/@user-px7gw7nv4n'><img src={youtube} alt='youtube' className='link'/></a>
+                       <a href='https://www.youtube.com/@user-px7gw7nv4n'><img src={insta} alt='instagram' className='link'/></a>
                     </div>
                 </form>
             </div>
