@@ -18,7 +18,7 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_k5c1dld', 'template_tk1naa5', form.current, {publicKey: '6QIdIAuKBxjmjMwbazQR_',
+      .sendForm('service_k5c1dld', 'template_tk1naa5', form.current, {publicKey: 'iATQ_uF7176ZoCQwu',
       })
       .then(
         () => {
@@ -50,7 +50,7 @@ const Contact = () => {
                     <input type='text' className='name' placeholder='Your Name' name="user_name"/>
                     <input type='email' className='email' placeholder='Your Email' name="user_email"/>
                     <textarea className='msg' name="message" rows="5" placeholder='Your Message'></textarea>
-                    <button type='Submit' value="Send" className='submitBtn'>Submit</button>
+                    <button type='submit' value="Send" className='submitBtn'>Submit</button>
                     <div className='links'>
                        <a href='https://web.facebook.com/'><img src={facebook}alt='facebook' className='link'/></a> 
                        <a href='www.linkedin.com/in/sahan-sachintha-56a49b284'> <img src={linkedin} alt='linkedin' className='link'/></a>
