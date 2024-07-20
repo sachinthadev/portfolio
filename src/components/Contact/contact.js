@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './contact.css';
 import clientImg1 from '../../assets/auso.jpeg';
 import facebook from  '../../assets/107175_circle_facebook_icon.png';
@@ -9,25 +9,32 @@ import insta from '../../assets/4555889_code_github_hosting_learning_programmer_
 import upwork from '../../assets/upwork.jpg';
 
 
-import emailjs from '@emailjs/browser';
+
 
 
 const Contact = () => {
-  const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
+   const [result, setResult] = React.useState("");
+   const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-    emailjs
-      .sendForm('service_k5c1dld', 'template_tk1naa5', form.current, {publicKey: '6QIdIAuKBxjmjMwbazQR_',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
+    formData.append("access_key", "bc70a5f2-0fb6-46b3-ba42-c691805a018b");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
  
   return (
@@ -46,11 +53,11 @@ const Contact = () => {
             <div id='contact'>
                 <h1 className='clientsTitle'>Contact Me</h1>
                 <span className='contactDesc'>If you would like to discuss a project or have any questions, please feel free to contact me. I am open to new opportunities and collaborations.</span>
-                <form className='contactForm' ref={form}  onSubmit={sendEmail}>
-                    <input type='text' className='name' placeholder='Your Name' name="user_name"/>
-                    <input type='email' className='email' placeholder='Your Email' name="user_email"/>
-                    <textarea className='msg' name="message" rows="5" placeholder='Your Message'></textarea>
-                    <button type='submit' value="Send" className='submitBtn'>Submit</button>
+                <form className='contactForm' onSubmit={onSubmit}>
+                    <input type='text' className='name' placeholder='Your Name' name="name" required/>
+                    <input type='email' className='email' placeholder='Your Email' name="email" required/>
+                    <textarea className='msg' name="message" required rows="5" placeholder='Your Message'></textarea>
+                    <button type="submit" value="Send" className='submitBtn'>Submit</button>
                     <div className='links'>
                        <a href='https://web.facebook.com/'><img src={facebook}alt='facebook' className='link'/></a> 
                        <a href='www.linkedin.com/in/sahan-sachintha-56a49b284'> <img src={linkedin} alt='linkedin' className='link'/></a>
@@ -59,6 +66,7 @@ const Contact = () => {
                        <a href='https://www.youtube.com/@user-px7gw7nv4n'><img src={insta} alt='instagram' className='link'/></a>
                     </div>
                 </form>
+                <span>{result}</span>
             </div>
     </section>
   );
