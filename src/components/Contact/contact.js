@@ -60,10 +60,10 @@ const Contact = () => {
                     <button type="submit" value="Send" className='submitBtn'>Submit</button>
                     <div className='links'>
                        <a href='https://web.facebook.com/'><img src={facebook}alt='facebook' className='link'/></a> 
-                       <a href='www.linkedin.com/in/sahan-sachintha-56a49b284'> <img src={linkedin} alt='linkedin' className='link'/></a>
-                       <a href='https://www.youtube.com/@user-px7gw7nv4n'> <img src={twitter} alt='twitter' className='link'/></a>
-                       <a href='https://www.youtube.com/@user-px7gw7nv4n'><img src={youtube} alt='youtube' className='link'/></a>
-                       <a href='https://www.youtube.com/@user-px7gw7nv4n'><img src={insta} alt='instagram' className='link'/></a>
+                       <a href='https://www.youtube.com/@user-px7gw7nv4n'> <img src={linkedin} alt='linkedin' className='link'/></a>
+                       <a href='www.linkedin.com/in/sahan-sachintha-56a49b284'> <img src={twitter} alt='twitter' className='link'/></a>
+                       <a href='https://www.instagram.com/sachintha.dev/?igsh=Zm1xZHEwaXhra3hk&utm_source=qr'><img src={youtube} alt='youtube' className='link'/></a>
+                       <a href='https://github.com/sachinthadev'><img src={insta} alt='instagram' className='link'/></a>
                     </div>
                 </form>
                 <span>{result}</span>
