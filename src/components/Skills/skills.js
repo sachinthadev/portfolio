@@ -8,7 +8,7 @@ const Skills = () => {
   return (
    <section id='skills'>
         <span className='skillTitle'>What I do</span>
-        <span className='skillDesc'>I am a self-employed full-stack software engineer, I design and build complete web applications, handling both front-end and back-end tasks. I create user interfaces with HTML, CSS, and JavaScript, and develop server-side logic using languages like Node.js and PHP. I manage databases, ensure the application is secure and performs well, and work with clients to meet their needs and deliver quality software.</span>
+        <span className='skillDesc'>I am a self-employed full-stack software engineer specializing in complete web applications. I handle front-end (HTML, CSS, JavaScript) and back-end (Node.js, PHP) development, manage databases, ensure security and performance, and collaborate with clients to deliver high-quality software.</span>
         <div className='skillBars'>
             <div className='skillBar'>
                 <img src={Front} alt='Front-end'className="skillBarImg"/>
@@ -28,6 +28,14 @@ const Skills = () => {
                 <img src={Devops} alt='Dev-ops'className="skillBarImg"/>
                 <div className='skillBarText'>
                     <h2>DevOps and Maintenance</h2>
+                    <p>In DevOps and maintenance, I implement practices to streamline development and deployment, monitor and maintain application uptime and performance, and handle incident management and post-mortem analysis to prevent future issues.
+                    </p>
+                </div>
+            </div>
+            <div className='skillBar'>
+                <img src={Devops} alt='Dev-ops'className="skillBarImg"/>
+                <div className='skillBarText'>
+                    <h2>Technologies</h2>
                     <p>In DevOps and maintenance, I implement practices to streamline development and deployment, monitor and maintain application uptime and performance, and handle incident management and post-mortem analysis to prevent future issues.
                     </p>
                 </div>
