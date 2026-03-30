@@ -8,81 +8,172 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 4rem 2rem;
 }
 
 .clientsTitle {
     font-size: 3rem;
     margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .clientsDesc {
     font-weight: 300;
     font-size: 1rem;
+    line-height: 1.6;
+    max-width: 50rem;
 }
 
 .clientsImgs { 
-    margin: 1rem 0;
+    margin: 2rem 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .clientsImg {
     object-fit: cover;
-    width: 23%;
-    min-width: 9rem;
-    margin: auto;
-    padding: 0.25rem;
+    width: 150px;
+    height: 100px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.clientsImg:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    border-color: var(--primary-color);
 }
 
 #clients{
     padding: 2rem;
+    width: 100%;
 }
 
 .contactDesc {
     padding: 1rem;
-    font-size: medium;
+    font-size: 1rem;
     font-weight: 300;
+    line-height: 1.6;
 }
 
 .contactForm {
-    margin: 1rem;
+    margin: 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90vw;
-    max-width: 60rem;
+    width: 100%;
+    max-width: 40rem;
+    gap: 1rem;
 }
 
 .name , .email , .msg {
     font-size: 1rem;
     width: 100%;
-    max-width: 40rem;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
-    color: white;
-    border: none;
+    padding: 1rem;
+    color: var(--text-color);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 0.5rem;
-    background: rgb(40, 40, 40);
+    background: var(--card-bg);
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.name:focus, .email:focus, .msg:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
 }
 
 .submitBtn {
-    background: white;
+    background: var(--primary-color);
     border: none;
     border-radius: 0.5rem;
-    margin: 2rem;
-    padding: 0.75rem 3.5rem;
+    margin: 1rem 0;
+    padding: 0.75rem 2rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
+.submitBtn:hover {
+    background: #00b8e6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
 
 .links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .link {
     object-fit: cover;
     height: 3rem;
     width: 3rem;
-    margin: 0 0.75rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.link:hover {
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.contactInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contactItem {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.contactItem:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
+}
+
+.contactItem h4 {
+    color: var(--primary-color);
+    margin: 0 0 0.8rem 0;
+    font-size: 1rem;
+}
+
+.contactItem a, .contactItem p {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin: 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contactItem a:hover {
+    color: var(--primary-color);
 }
