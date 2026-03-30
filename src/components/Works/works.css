@@ -8,50 +8,81 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 1rem;
+    padding: 4rem 2rem;
 }
 
 .worksTitle{
     margin: 1rem 0;
     font-size: 3rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, var(--primary-color), #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .workDesc{
     font-weight: 300;
     font-size: 1rem;
     max-width: 45rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
 .worksImgs{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
     width: 100vw;
-    max-width: 65rem; 
-
+    max-width: 65rem;
+    justify-items: center;
 }
 
 .worksImg{
     object-fit: cover;
     height: 15rem;
-    width: 10rem;
-    margin: 0.5rem;
-    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 15rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.worksImg:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    border-color: var(--primary-color);
 }
 
 .worksBtn{
     margin: 3rem 0;
-    padding: 0.5rem 2.5rem;
-    border: none;
+    padding: 0.75rem 2.5rem;
+    border: 2px solid var(--primary-color);
     border-radius: 2rem;
-    background: white;
+    background: transparent;
+    color: var(--primary-color);
     font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.worksBtn:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
 }
 
 @media screen and (max-width:585px) {
-    .worksImg{
-        height: 48vw;
+    .worksImgs {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.5rem;
     }
-    
+
+    .worksImg{
+        height: 12rem;
+        max-width: 12rem;
+    }
 }

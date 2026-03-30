@@ -1,40 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react'
 import './contact.css';
+import emailjs from '@emailjs/browser';
 import clientImg1 from '../../assets/auso.jpeg';
-import facebook from  '../../assets/107175_circle_facebook_icon.png';
-import linkedin from '../../assets/771382_channel_circle_logo_media_social_icon.png';
-import twitter from '../../assets/107178_circle_linkedin_icon.png';
-import youtube from '../../assets/6636566_instagram_social media_social network_icon.png';
-import insta from '../../assets/4555889_code_github_hosting_learning_programmer_icon.png';
-import upwork from '../../assets/upwork.jpg';
-
-
-
+import facebook from  '../../assets/facebook-icon.png';
+import linkedin from '../../assets/linked.png';
+import twitter from '../../assets/twitter.png';
+import youtube from '../../assets/youtube.png';
+import insta from '../../assets/instagram.png';
 
 
 const Contact = () => {
-   const [result, setResult] = React.useState("");
-   const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+  const form = useRef();
 
-    formData.append("access_key", "bc70a5f2-0fb6-46b3-ba42-c691805a018b");
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+      .then((result) => {
+          console.log(result.text);
+          alert('Message sent successfully!');
+          e.target.reset();
+      }, (error) => {
+          console.log(error.text);
+          alert('Failed to send message, please try again.');
+      });
   };
  
   return (
@@ -47,26 +36,49 @@ const Contact = () => {
                 </p>
                 <div className='clientsImgs'>
                 <img src={clientImg1} alt='' className='clientsImg'/>
-                <img src={upwork} alt='' className='clientsImg'/>
                 </div>
             </div>
             <div id='contact'>
-                <h1 className='clientsTitle'>Contact Me</h1>
-                <span className='contactDesc'>If you would like to discuss a project or have any questions, please feel free to contact me. I am open to new opportunities and collaborations.</span>
-                <form className='contactForm' onSubmit={onSubmit}>
-                    <input type='text' className='name' placeholder='Your Name' name="name" required/>
-                    <input type='email' className='email' placeholder='Your Email' name="email" required/>
-                    <textarea className='msg' name="message" required rows="5" placeholder='Your Message'></textarea>
-                    <button type="submit" value="Send" className='submitBtn'>Submit</button>
+                <h1 className='clientsTitle'>Get In Touch</h1>
+                <span className='contactDesc'>I'm always interested in hearing about new projects and opportunities. Feel free to reach out if you'd like to collaborate or have any questions!</span>
+                <form ref={form} className='contactForm' onSubmit={sendEmail}>
+                    <input type='text' className='name' placeholder='Your Name' name="user_name" required/>
+                    <input type='email' className='email' placeholder='Your Email' name="user_email" required/>
+                    <textarea className='msg' name='message' rows="5" placeholder='Your Message' required></textarea>
+                    <button type='submit' value="send" className='submitBtn'>Send Message</button>
                     <div className='links'>
-                       <a href='https://web.facebook.com/sahan.sachintha.714'><img src={facebook}alt='facebook' className='link'/></a> 
-                       <a href='https://www.youtube.com/@user-px7gw7nv4n'> <img src={linkedin} alt='linkedin' className='link'/></a>
-                       <a href='www.linkedin.com/in/sahan-sachintha-56a49b284'> <img src={twitter} alt='twitter' className='link'/></a>
-                       <a href='https://www.instagram.com/sachintha.dev/?igsh=Zm1xZHEwaXhra3hk&utm_source=qr'><img src={youtube} alt='youtube' className='link'/></a>
-                       <a href='https://github.com/sachinthadev'><img src={insta} alt='instagram' className='link'/></a>
+                        <a href='https://www.linkedin.com/in/sahan-sachintha-56a49b284' target='_blank' rel='noopener noreferrer' title='LinkedIn'>
+                            <img src={linkedin} alt='linkedin' className='link'/>
+                        </a>
+                        <a href='https://github.com/sachinthadev' target='_blank' rel='noopener noreferrer' title='GitHub'>
+                            <img src={insta} alt='instagram' className='link'/>
+                        </a>
+                        <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' title='Facebook'>
+                            <img src={facebook} alt='facebook' className='link'/>
+                        </a>
+                        <a href='https://twitter.com' target='_blank' rel='noopener noreferrer' title='Twitter'>
+                            <img src={twitter} alt='twitter' className='link'/>
+                        </a>
+                        <a href='https://www.youtube.com' target='_blank' rel='noopener noreferrer' title='YouTube'>
+                            <img src={youtube} alt='youtube' className='link'/>
+                        </a>
                     </div>
                 </form>
-                <span>{result}</span>
+
+                <div className='contactInfo'>
+                    <div className='contactItem'>
+                        <h4>Email</h4>
+                        <a href='mailto:sahansachintha.dev@gmail.com'>sahansachintha.dev@gmail.com</a>
+                    </div>
+                    <div className='contactItem'>
+                        <h4>Phone</h4>
+                        <a href='tel:+94772428224'>+94 772428224</a>
+                    </div>
+                    <div className='contactItem'>
+                        <h4>Location</h4>
+                        <p>Sri Lanka</p>
+                    </div>
+                </div>
             </div>
     </section>
   );
