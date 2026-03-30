@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.e3c88193.css",
-    "main.js": "/portfolio/static/js/main.e2b60320.js",
+    "main.css": "/portfolio/static/css/main.28defede.css",
+    "main.js": "/portfolio/static/js/main.d787ddf2.js",
     "static/media/image.png": "/portfolio/static/media/image.22fdc53c4f024cc5b32a.png",
+    "static/media/link_lanka_logo.jpeg": "/portfolio/static/media/link_lanka_logo.5ea9bd96bf08f62f7212.jpeg",
     "static/media/youtube.png": "/portfolio/static/media/youtube.1f630336b4d4b957ecae.png",
     "static/media/logo.png": "/portfolio/static/media/logo.079222953ea37d05aa67.png",
     "static/media/instagram.png": "/portfolio/static/media/instagram.088dc5d64b4cb6762821.png",
@@ -11,11 +12,11 @@
     "static/media/facebook-icon.png": "/portfolio/static/media/facebook-icon.0893b145b67ecd08326e.png",
     "static/media/contact.svg": "/portfolio/static/media/contact.c9e76ccc528c219b3247c9d6376d67fc.svg",
     "index.html": "/portfolio/index.html",
-    "main.e3c88193.css.map": "/portfolio/static/css/main.e3c88193.css.map",
-    "main.e2b60320.js.map": "/portfolio/static/js/main.e2b60320.js.map"
+    "main.28defede.css.map": "/portfolio/static/css/main.28defede.css.map",
+    "main.d787ddf2.js.map": "/portfolio/static/js/main.d787ddf2.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3c88193.css",
-    "static/js/main.e2b60320.js"
+    "static/css/main.28defede.css",
+    "static/js/main.d787ddf2.js"
   ]
 }
