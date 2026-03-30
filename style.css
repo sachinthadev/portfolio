@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: transparent;
+    font-family: 'Poppins' , sans-serif;
+}
+
+:root {
+    --primary-color: #00d4ff;
+    --secondary-color: #090909;
+    --text-color: #ffffff;
+    --bg-color: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --hover-color: #333;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+    overflow-y: scroll;
+    line-height: 1.6;
+}
+
+section {
+    padding: 4rem 2rem;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
