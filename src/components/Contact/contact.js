@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 import './contact.css';
 import emailjs from '@emailjs/browser';
 import clientImg1 from '../../assets/auso.jpeg';
+import clientImg2 from '../../assets/jlanka.jpeg';
+import clientImg3 from '../../assets/link_lanka_logo.jpeg';
 import facebook from  '../../assets/facebook-icon.png';
 import linkedin from '../../assets/linked.png';
 import twitter from '../../assets/twitter.png';
@@ -36,6 +38,8 @@ const Contact = () => {
                 </p>
                 <div className='clientsImgs'>
                 <img src={clientImg1} alt='' className='clientsImg'/>
+                <img src={clientImg2} alt='' className='clientsImg'/>
+                <img src={clientImg3} alt='' className='clientsImg'/>
                 </div>
             </div>
             <div id='contact'>

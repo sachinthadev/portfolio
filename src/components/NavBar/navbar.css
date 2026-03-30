@@ -3,10 +3,10 @@
     backdrop-filter: blur(10px);
     height: 5rem;
     width: 100vw;
-    padding: 1rem 6rem;
+    padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: fixed;
     top: 0;
     z-index: 3;
@@ -18,13 +18,18 @@
 
 .logo {
     object-fit: cover;
-    height: 5rem;
-    width: 6rem;
+    height: 4rem;
+    width: 5rem;
+    position: absolute;
+    left: 2rem;
+    filter: brightness(1.1);
 }
 
 .desktopMenu {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
 .desktopMenuListItem { 
@@ -94,12 +99,28 @@
     display: none;
     cursor: pointer;
     z-index: 4;
+    position: absolute;
+    right: 2rem;
 }
 
 /* Show hamburger and hide desktop menu */
 @media screen and (max-width: 768px) {
+    .navbar {
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+
+    .logo {
+        position: static;
+        height: 3rem;
+        width: 4rem;
+        margin-right: 1rem;
+    }
+
     .mobileMenuIcon {
         display: block;
+        position: absolute;
+        right: 1rem;
     }
 
     .desktopMenu {
